@@ -12,7 +12,13 @@ const links = [
   { to: "/coventry", label: "Coventry" },
   { to: "/online-coaching", label: "Online" },
   { to: "/pricing", label: "Pricing" },
-];
+] as const;
+
+const menuOnly = [
+  { to: "/reviews", label: "Reviews" },
+  { to: "/faq", label: "FAQ" },
+  { to: "/contact", label: "Contact" },
+] as const;
 
 export function SiteHeader({ tone = "paper" }: { tone?: "paper" | "void" }) {
   const [open, setOpen] = useState(false);
@@ -74,6 +80,16 @@ export function SiteHeader({ tone = "paper" }: { tone?: "paper" | "void" }) {
         >
           <nav className="flex flex-col gap-1">
             {links.map((l) => (
+              <Link
+                key={l.to}
+                to={l.to}
+                onClick={() => setOpen(false)}
+                className="py-3 text-lg"
+              >
+                {l.label}
+              </Link>
+            ))}
+            {menuOnly.map((l) => (
               <Link
                 key={l.to}
                 to={l.to}

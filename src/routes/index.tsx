@@ -43,7 +43,6 @@ function Home() {
       <ProgramsTeaser />
       <QuizCta />
       <SocialProof />
-      <ExplorePages />
       <Closing />
     </SiteShell>
   );
@@ -256,65 +255,6 @@ function SocialProof() {
               <blockquote className="pretty text-[15px] leading-relaxed">{t.quote}</blockquote>
               <figcaption className="mt-5 text-sm font-medium">{t.name}</figcaption>
             </figure>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function ExplorePages() {
-  const pages = [
-    {
-      to: "/programs" as const,
-      title: "Programmes",
-      body: "Six written plans. Each programme has its own page.",
-    },
-    {
-      to: "/about" as const,
-      title: "The coach",
-      body: "Fourteen years on Coventry gym floors. How we coach.",
-    },
-    {
-      to: "/coventry" as const,
-      title: "Personal trainer Coventry",
-      body: "Where we train in the city, and who we work with.",
-    },
-    {
-      to: "/online-coaching" as const,
-      title: "Online coaching UK",
-      body: "The same daily plan, delivered remotely across Britain.",
-    },
-    {
-      to: "/pricing" as const,
-      title: "Pricing",
-      body: "Seven-day trial. Then £29 a month or £249 a year.",
-    },
-    {
-      to: "/faq" as const,
-      title: "FAQ",
-      body: "Equipment, beginners, nutrition, cancelling, switching.",
-    },
-  ];
-  return (
-    <section className="border-t border-line bg-paper-2 px-5 py-20 sm:px-8 sm:py-24">
-      <div className="mx-auto max-w-6xl">
-        <p className="eyebrow text-muted">Separate pages</p>
-        <h2 className="display mt-3 text-4xl sm:text-5xl">One topic, one URL</h2>
-        <p className="pretty mt-4 max-w-xl text-muted">
-          Programmes, the coach, Coventry, pricing and reviews each live on their
-          own page so search engines and people can find the right answer.
-        </p>
-        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {pages.map((p) => (
-            <Link
-              key={p.to}
-              to={p.to}
-              className="rounded-2xl border border-line bg-paper p-6 transition-colors hover:bg-paper-2"
-            >
-              <h3 className="text-xl font-medium tracking-tight">{p.title}</h3>
-              <p className="pretty mt-2 text-sm text-muted">{p.body}</p>
-            </Link>
           ))}
         </div>
       </div>
