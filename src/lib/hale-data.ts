@@ -62,6 +62,7 @@ export const SITE = {
     "West Midlands",
     "United Kingdom (online)",
   ],
+  email: "dips@hskcoaching.co.uk",
 };
 
 export const COACH = {
