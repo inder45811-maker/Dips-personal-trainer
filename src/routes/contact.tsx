@@ -52,8 +52,12 @@ function ContactPage() {
               </dd>
             </div>
             <div>
-              <dt className="text-muted">Website</dt>
-              <dd className="mt-1 font-medium">{SITE.domain}</dd>
+              <dt className="text-muted">Email</dt>
+              <dd className="mt-1 font-medium">
+                <a href={`mailto:${SITE.email}`} className="underline underline-offset-4">
+                  {SITE.email}
+                </a>
+              </dd>
             </div>
             <div>
               <dt className="text-muted">Instagram link</dt>

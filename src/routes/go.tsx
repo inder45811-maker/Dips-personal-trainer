@@ -3,6 +3,8 @@ import { useState, type FormEvent } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { submitLead } from "@/lib/hale-server";
+import { sendLeadEmail } from "@/lib/send-lead-email";
+import { SITE } from "@/lib/hale-data";
 import { pageHead } from "@/lib/seo";
 import { cn } from "@/lib/utils";
 
@@ -11,7 +13,7 @@ export const Route = createFileRoute("/go")({
     pageHead({
       title: "Start here | HSK Coaching Instagram",
       description:
-        "Instagram landing for HSK Coaching. Send your name, email and training goal. One link, one form.",
+        "Instagram landing for HSK Coaching in Coventry. Send your name, email and training goal. One link, one form.",
       path: "/go",
     }),
   component: InstagramLanding,
@@ -41,36 +43,13 @@ function InstagramLanding() {
     setError(null);
     setBusy(true);
     try {
-      const res = await submitLead({
+      await sendLeadEmail({ name, email, phone, goal, notes });
+      void submitLead({
         data: { name, email, phone, goal, notes },
-      });
-      if (!res.ok) {
-        setError(res.error);
-        return;
-      }
-      if (!res.emailed && res.inbox) {
-        await fetch(`https://formsubmit.co/ajax/${encodeURIComponent(res.inbox)}`, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
-          },
-          body: JSON.stringify({
-            _subject: `New HSK Coaching enquiry — ${goal}`,
-            _template: "table",
-            _captcha: "false",
-            name,
-            email,
-            phone: phone || "—",
-            goal,
-            message: notes || "No extra note.",
-            source: "Instagram /go",
-          }),
-        }).catch(() => undefined);
-      }
+      }).catch(() => undefined);
       setDone(true);
     } catch {
-      setError("Couldn’t send that. Try again.");
+      setError("Couldn’t send that. Check your connection and try again.");
     } finally {
       setBusy(false);
     }
@@ -113,7 +92,8 @@ function InstagramLanding() {
                 <span className="serif-italic font-normal">HSK</span>
               </h1>
               <p className="pretty mt-4 text-sm leading-relaxed text-paper/70">
-                One coach. Tell us what you want — we will send your plan.
+                Personal training in Coventry and online across the UK. Tell us
+                what you want — we will reply with a starting plan.
               </p>
             </div>
 
@@ -193,7 +173,7 @@ function InstagramLanding() {
                 {busy ? "Sending…" : "Send enquiry"}
               </Button>
               <p className="text-center text-xs text-paper/45">
-                Sent directly to HSK Coaching. We will not share your details.
+                Sent to {SITE.email}. We will not share your details.
               </p>
             </form>
           </>
