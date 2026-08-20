@@ -19,7 +19,7 @@ export async function sendLeadEmail(lead: LeadPayload) {
       Accept: "application/json",
     },
     body: JSON.stringify({
-      _subject: `New HSK Coaching enquiry — ${lead.goal}`,
+      _subject: `HSK enquiry — ${lead.name} — ${lead.goal}`,
       _template: "table",
       _captcha: "false",
       _replyto: lead.email,

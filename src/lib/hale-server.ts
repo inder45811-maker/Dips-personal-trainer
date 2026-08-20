@@ -303,7 +303,7 @@ async function forwardLeadEmail(
         Accept: "application/json",
       },
       body: JSON.stringify({
-        _subject: `New HSK Coaching enquiry — ${lead.goal}`,
+        _subject: `HSK enquiry — ${lead.name} — ${lead.goal}`,
         _template: "table",
         _captcha: "false",
         name: lead.name,
