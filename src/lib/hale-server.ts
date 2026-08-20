@@ -1,6 +1,7 @@
 import { createServerFn } from "@tanstack/react-start";
 import { authMiddleware } from "@/lib/auth/middleware";
 import { getSql } from "@/lib/db";
+import { SITE } from "@/lib/hale-data";
 
 export type Profile = {
   user_id: string;
@@ -270,7 +271,8 @@ export type Lead = {
 
 function coachInboxEmail() {
   const raw = process.env.COACH_EMAIL?.trim();
-  return raw && raw.includes("@") ? raw : "";
+  if (raw && raw.includes("@")) return raw;
+  return SITE.email;
 }
 
 async function readStoredInboxEmail() {
@@ -353,20 +355,19 @@ export const submitLead = createServerFn({ method: "POST" })
     }
 
     const to = await readStoredInboxEmail();
-    if (!to) {
-      return {
-        ok: false as const,
-        error: "The coaching inbox has not been set yet. Please try again shortly.",
-      };
+    const emailed = to
+      ? await forwardLeadEmail(to, { name, email, phone, goal, notes })
+      : false;
+    try {
+      const sql = await getSql();
+      await sql`
+        insert into hale_leads (name, email, phone, goal, notes, source, emailed)
+        values (${name}, ${email}, ${phone || null}, ${goal}, ${notes || null}, ${"instagram"}, ${emailed})
+      `;
+    } catch {
+      // Lead email is the source of truth on the public landing page.
     }
-
-    const emailed = await forwardLeadEmail(to, { name, email, phone, goal, notes });
-    const sql = await getSql();
-    await sql`
-      insert into hale_leads (name, email, phone, goal, notes, source, emailed)
-      values (${name}, ${email}, ${phone || null}, ${goal}, ${notes || null}, ${"instagram"}, ${emailed})
-    `;
-    return { ok: true as const, emailed, inbox: to };
+    return { ok: true as const, emailed, inbox: to || SITE.email };
   });
 
 export const listLeads = createServerFn({ method: "GET" })
