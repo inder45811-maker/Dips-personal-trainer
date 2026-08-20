@@ -20,12 +20,12 @@ export const Route = createFileRoute("/go")({
 });
 
 const GOALS = [
+  "Fat loss",
   "Build muscle",
-  "Get lean",
-  "Get stronger",
-  "Feel better",
-  "Boxing & conditioning",
-  "Not sure yet",
+  "Strength and conditioning",
+  "Full body composition",
+  "Fitness conditioning",
+  "Other",
 ];
 
 function InstagramLanding() {
