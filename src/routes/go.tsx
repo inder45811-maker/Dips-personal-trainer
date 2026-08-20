@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -80,9 +80,6 @@ function InstagramLanding() {
               We will reply to {email} regarding {goal.toLowerCase()}. Please
               check your inbox.
             </p>
-            <Button asChild variant="inverse" size="lg" className="mt-10">
-              <Link to="/">See the full site</Link>
-            </Button>
           </div>
         ) : (
           <>
