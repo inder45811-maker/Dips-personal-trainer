@@ -4,6 +4,7 @@ import { RedirectToSignIn } from "@/lib/auth/gates";
 import { signOut } from "@/lib/auth/client";
 import { useCurrentUserState } from "@/lib/auth/use-current-user";
 import { cn } from "@/lib/utils";
+import { Logo } from "@/components/logo";
 import { pageHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/app")({
@@ -46,8 +47,8 @@ function AppLayout() {
   return (
     <div className="min-h-dvh bg-void text-paper">
       <header className="sticky top-0 z-30 flex h-14 items-center justify-between border-b border-paper/10 bg-void/90 px-5 backdrop-blur">
-        <Link to="/" className="text-[13px] font-semibold tracking-[0.22em]">
-          HSK
+        <Link to="/" aria-label="HSK Coaching" className="flex items-center">
+          <Logo className="h-7 w-auto text-paper" />
         </Link>
         <div className="flex items-center gap-4 text-sm text-paper/60">
           <span className="hidden sm:inline">{user.displayName ?? "Athlete"}</span>

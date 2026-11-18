@@ -4,6 +4,7 @@ import { useState } from "react";
 import { signOut } from "@/lib/auth/client";
 import { useCurrentUserState } from "@/lib/auth/use-current-user";
 import { cn } from "@/lib/utils";
+import { Logo } from "./logo";
 import { Button } from "./ui/button";
 
 const links = [
@@ -35,8 +36,8 @@ export function SiteHeader({ tone = "paper" }: { tone?: "paper" | "void" }) {
       )}
     >
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 sm:h-[4.25rem] sm:px-8">
-        <Link to="/" className="font-sans text-[15px] font-semibold tracking-[0.22em]">
-          HSK
+        <Link to="/" aria-label="HSK Coaching" className="flex items-center">
+          <Logo className="h-8 w-auto sm:h-9" />
         </Link>
 
         <nav className="hidden items-center gap-6 lg:flex">

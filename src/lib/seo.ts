@@ -78,7 +78,7 @@ export function organizationSchema() {
     legalName: SITE.name,
     url: SITE.url,
     image: [`${SITE.url}/og.jpg`, `${SITE.url}/images/hero.jpg`],
-    logo: `${SITE.url}/favicon.svg`,
+    logo: `${SITE.url}/logo.svg`,
     description: SITE.description,
     slogan: "A written plan for every day.",
     priceRange: `${SITE.priceMonthly}–${SITE.priceYearly}`,

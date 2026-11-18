@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import { Logo } from "@/components/logo";
 import { SITE } from "@/lib/hale-data";
 
 export function SiteFooter() {
@@ -6,7 +7,7 @@ export function SiteFooter() {
     <footer className="border-t border-ink/8 bg-paper">
       <div className="mx-auto grid max-w-6xl gap-10 px-5 py-16 sm:px-8 md:grid-cols-4">
         <div className="md:col-span-2">
-          <p className="text-sm font-semibold tracking-[0.22em]">HSK</p>
+          <Logo className="h-8 w-auto text-ink" />
           <p className="pretty mt-4 max-w-sm text-sm leading-relaxed text-muted">
             Professional strength coaching and daily programming. {SITE.name},{" "}
             {SITE.city}.

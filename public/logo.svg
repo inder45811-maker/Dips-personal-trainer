@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 282.00 97.00" role="img" aria-label="HSK Coaching">
+  <title>HSK Coaching</title>
+  <rect width="100%" height="100%" fill="#11100e"/>
+  <g fill="#EDE6D8">
+  <rect x="2" y="2" width="14" height="64"/><rect x="70" y="2" width="14" height="64"/><rect x="16" y="27.0" width="15.0" height="14"/><rect x="55.0" y="27.0" width="15.0" height="14"/>
+  <rect x="100" y="2" width="82" height="14"/><rect x="100" y="27.0" width="82" height="14"/><rect x="100" y="52" width="82" height="14"/><rect x="100" y="2" width="14" height="39.0"/><rect x="168" y="27.0" width="14" height="39.0"/>
+  <rect x="198" y="2" width="14" height="64"/><polygon points="220,34.0 220,29.0 280,2 280,16"/><polygon points="220,34.0 280,52 280,66 220,39.0"/>
+  <rect x="2" y="84" width="12.2" height="1.8"/><rect x="2" y="84" width="1.8" height="11"/><rect x="2" y="93.2" width="12.2" height="1.8"/>
+  <rect x="40.77" y="84" width="12.2" height="1.8"/><rect x="40.77" y="84" width="1.8" height="11"/><rect x="51.17" y="84" width="1.8" height="11"/><rect x="40.77" y="93.2" width="12.2" height="1.8"/>
+  <polygon points="81.42,94.54 87.4,85.59 85.69,84.46 79.72,93.41"/><polygon points="93.37,93.41 87.4,84.46 85.69,85.59 91.67,94.54"/><rect x="84.49" y="84" width="4.1" height="2.05"/><rect x="82.06" y="90.38" width="8.96" height="1.8"/>
+  <rect x="120.11" y="84" width="12.2" height="1.8"/><rect x="120.11" y="84" width="1.8" height="11"/><rect x="120.11" y="93.2" width="12.2" height="1.8"/>
+  <rect x="158.89" y="84" width="1.8" height="11"/><rect x="170.29" y="84" width="1.8" height="11"/><rect x="158.89" y="88.6" width="13.2" height="1.8"/>
+  <rect x="198.66" y="84" width="1.8" height="11"/>
+  <rect x="227.03" y="84" width="1.8" height="11"/><rect x="238.83" y="84" width="1.8" height="11"/><polygon points="227.38,85.61 239.18,94.81 240.28,93.39 228.48,84.19"/>
+  <rect x="267.2" y="84" width="12.8" height="1.8"/><rect x="267.2" y="84" width="1.8" height="11"/><rect x="267.2" y="93.2" width="12.8" height="1.8"/><rect x="278.2" y="88.95" width="1.8" height="6.05"/><rect x="273.6" y="88.6" width="6.4" height="1.8"/>
+  </g>
+</svg>

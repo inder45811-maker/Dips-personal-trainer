@@ -1,4 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <rect width="32" height="32" fill="#161412"/>
-  <path fill="#EDE6D8" d="M8 7h4.1l4.9 8.4L21.9 7H26v18h-3.5V13.2L18.2 22h-4.4l-4.3-8.8V25H8V7z"/>
+  <rect width="32" height="32" fill="#11100e"/>
+  <g fill="#EDE6D8">
+  <rect x="4" y="9.25" width="1.39" height="13.5"/><rect x="9.55" y="9.25" width="1.39" height="13.5"/><rect x="5.39" y="15.31" width="1.11" height="1.39"/><rect x="8.44" y="15.31" width="1.11" height="1.39"/><rect x="12.53" y="9.25" width="6.93" height="1.39"/><rect x="12.53" y="15.31" width="6.93" height="1.39"/><rect x="12.53" y="21.36" width="6.93" height="1.39"/><rect x="12.53" y="9.25" width="1.39" height="7.44"/><rect x="18.08" y="15.31" width="1.39" height="7.44"/><rect x="21.07" y="9.25" width="1.39" height="13.5"/><polygon points="23.08,16.0 23.08,15.51 28.0,9.25 28.0,10.64"/><polygon points="23.08,16.0 28.0,21.36 28.0,22.75 23.08,16.49"/>
+  </g>
 </svg>

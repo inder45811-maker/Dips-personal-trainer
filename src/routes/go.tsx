@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
+import { Logo } from "@/components/logo";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { submitLead } from "@/lib/hale-server";
@@ -65,9 +66,7 @@ function InstagramLanding() {
       <div className="absolute inset-0 bg-gradient-to-t from-void via-void/70 to-void/40" />
 
       <main className="relative mx-auto flex min-h-dvh max-w-md flex-col px-5 py-8">
-        <p className="font-sans text-[0.72rem] font-medium uppercase tracking-[0.28em]">
-          HSK
-        </p>
+        <Logo className="h-11 w-auto text-paper sm:h-12" />
 
         {done ? (
           <div className="my-auto pb-16">
